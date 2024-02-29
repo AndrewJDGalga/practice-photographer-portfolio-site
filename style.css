@@ -9,3 +9,14 @@ body {
     background-color: var(--background);
     color: var(--text-default);
 }
+
+.rotated-90 {
+    transform: rotate(-90deg);
+    
+}
+
+.rel-bs-left {
+    position: relative;
+    left: -50%;
+}
+
