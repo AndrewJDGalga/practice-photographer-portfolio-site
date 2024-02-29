@@ -20,3 +20,9 @@ body {
     left: -50%;
 }
 
+.artist-link {
+    background-color: var(--text-default);
+    color: var(--background);
+    text-decoration: none;
+    padding: 2px 8px;
+}
