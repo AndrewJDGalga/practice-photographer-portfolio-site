@@ -18,6 +18,15 @@ body {
 .rel-bs-left {
     position: relative;
     left: -50%;
+    /*top: -900%;*/
+    /*transform: translateX(-100%);*/
+}
+
+.artist-link-pos {
+    position: relative;
+    left: -50%;
+    font-size: xx-large;
+    height: 64px;
 }
 
 .artist-link {
