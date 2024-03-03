@@ -38,4 +38,12 @@ body {
 
 #img-host {
     position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.carousel-item img {
+    height: 100vh;
 }
