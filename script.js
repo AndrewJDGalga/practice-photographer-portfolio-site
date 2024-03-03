@@ -4,6 +4,10 @@ const imgBtnEvent = (imgName) => {
 
 window.onload = () =>{
     const imgHost = document.getElementById('img-host');
+    const carousel = new bootstrap.Carousel(imgHost);
+
+    /*
+    const imgHost = document.getElementById('img-host');
 
     const imageBtns = document.getElementsByClassName('gallery-btn');
     const imagePaths = [];
@@ -14,6 +18,16 @@ window.onload = () =>{
     }
 
     const fragment = document.createDocumentFragment();
+
+    const carouselHost = document.createElement('div');
+    fragment.appendChild(carouselHost);
+    
+    carouselHost.setAttribute('id', 'hiddenCarousel');
+    carouselHost.classList.add('carousel');
+    carouselHost.classList.add('slide');
+
+
+
     imagePaths.forEach((imagePath)=>{
         const img = document.createElement('img');
         img.src = imagePath;
@@ -21,4 +35,5 @@ window.onload = () =>{
     })
 
     imgHost.appendChild(fragment);
+    */
 }

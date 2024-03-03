@@ -35,3 +35,7 @@ body {
     text-decoration: none;
     padding: 2px 8px;
 }
+
+#img-host {
+    position: absolute;
+}
