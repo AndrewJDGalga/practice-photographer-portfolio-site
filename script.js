@@ -6,6 +6,11 @@ window.onload = () =>{
     const imgHost = document.getElementById('img-host');
     const carousel = new bootstrap.Carousel(imgHost);
 
+    const carouselInner = document.getElementsByClassName('carousel-inner')[0];
+    carouselInner.addEventListener('click', ()=>{
+        imgHost.classList.add('hide');
+    });
+
     /*
     const imgHost = document.getElementById('img-host');
 
