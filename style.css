@@ -3,6 +3,7 @@
     --artist-container: #F1E4C3;
     --extra: #C6A969;
     --text-default: #597E52;
+    --faded: #555555BB;
 }
 
 body {
@@ -40,10 +41,11 @@ body {
     position: absolute;
     z-index: 1;
     top: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    width: 100%;
+    background-color: var(--faded);
 }
 
 .carousel-item img {
     height: 100vh;
+    margin: 0 auto;
 }
