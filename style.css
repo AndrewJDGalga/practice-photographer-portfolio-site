@@ -42,6 +42,7 @@ body {
     text-decoration: none;
     padding: 2px 8px;
     border: none;
+    font-size: xx-large;
 }
 .artist-link:hover {
     background-color: var(--faded);
