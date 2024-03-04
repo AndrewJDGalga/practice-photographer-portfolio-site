@@ -3,7 +3,7 @@
     --artist-container: #F1E4C3;
     --extra: #C6A969;
     --text-default: #597E52;
-    --faded: #555555BB;
+    --faded: #FFFFECBB;
 }
 
 body {
@@ -35,6 +35,11 @@ body {
     color: var(--background);
     text-decoration: none;
     padding: 2px 8px;
+}
+.artist-link:hover {
+    background-color: var(--faded);
+    border: 2px var(--background) solid;
+    color: var(--text-default);
 }
 
 #img-host {
