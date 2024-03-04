@@ -3,7 +3,7 @@
     --artist-container: #F1E4C3;
     --extra: #C6A969;
     --text-default: #597E52;
-    --faded: #FFFFECBB;
+    --faded: #FFFFEC99;
 }
 
 body {
@@ -30,11 +30,18 @@ body {
     height: 64px;
 }
 
+.artist-block {
+    background-color: var(--artist-container);
+    margin: 4px;
+    padding: 16px;
+}
+
 .artist-link {
     background-color: var(--text-default);
     color: var(--background);
     text-decoration: none;
     padding: 2px 8px;
+    border: none;
 }
 .artist-link:hover {
     background-color: var(--faded);
