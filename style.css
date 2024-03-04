@@ -33,7 +33,7 @@ body {
 .artist-block {
     background-color: var(--artist-container);
     margin: 4px;
-    padding: 16px;
+    padding: 8px 4px 4px 2px;
 }
 
 .artist-link {
