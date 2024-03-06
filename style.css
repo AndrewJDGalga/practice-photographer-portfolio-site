@@ -17,6 +17,12 @@ body {
 .text-small {
     font-size: 1.5rem;
 }
+.text-big {
+    font-size: 3rem;
+}
+.text-sub {
+    vertical-align: sub;
+}
 
 .artist-block {
     background-color: var(--artist-container);
