@@ -11,23 +11,11 @@ body {
     color: var(--text-default);
 }
 
-.rotated-90 {
-    transform: rotate(-90deg);
-    
+.text-super {
+    vertical-align: super;
 }
-
-.rel-bs-left {
-    position: relative;
-    left: -50%;
-    /*top: -900%;*/
-    /*transform: translateX(-100%);*/
-}
-
-.artist-link-pos {
-    position: relative;
-    left: -50%;
-    font-size: xx-large;
-    height: 64px;
+.text-small {
+    font-size: 1.5rem;
 }
 
 .artist-block {
