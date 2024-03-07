@@ -44,7 +44,7 @@ body {
     color: var(--text-default);
 }
 
-#img-host {
+#carousel-host {
     position: absolute;
     z-index: 1;
     top: 0;
