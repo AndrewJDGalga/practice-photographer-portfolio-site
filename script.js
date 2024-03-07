@@ -50,7 +50,15 @@ window.onload = () => {
 
     const imageButtons = document.getElementsByClassName('image-button');
 
+    const fullImgPaths = [];
+
+    for(let i = 0; i < imageButtons.length; i++){
+        fullImgPaths.push(imageButtons[i].dataset.fullscreen);
+    }
+    console.log(fullImgPaths);
+    /*
     for(let i = 0; i < imageButtons.length; i++){
         imageButtons[i].onclick = ()=>{ console.log(imageButtons[i].dataset.position); }
     }
+    */
 }
