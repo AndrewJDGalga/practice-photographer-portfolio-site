@@ -47,8 +47,8 @@ window.onload = () => {
     
     const indicatorFragment = document.createDocumentFragment();
     const imageFragment = document.createDocumentFragment();
-    
-    const dataSources = document.getElementsByClassName('gallery-btn');
+
+    const imageButtons = document.getElementsByClassName('image-button');
 
     
 }
