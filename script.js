@@ -54,8 +54,17 @@ window.onload = () => {
 
     for(let i = 0; i < imageButtons.length; i++){
         fullImgPaths.push(imageButtons[i].dataset.fullscreen);
+        
+        const indicator = document.createElement('button');
+        indicator.type = "button";
+        indicator.dataset.bsSlideTo = String(i);
+
+        indicatorFragment.appendChild(indicator);
     }
-    console.log(fullImgPaths);
+
+    console.log(indicatorFragment);
+
+    //console.log(fullImgPaths);
     /*
     for(let i = 0; i < imageButtons.length; i++){
         imageButtons[i].onclick = ()=>{ console.log(imageButtons[i].dataset.position); }
