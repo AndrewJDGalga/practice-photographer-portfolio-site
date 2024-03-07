@@ -1,3 +1,4 @@
+/*
 const imgHost = document.getElementById('img-host');
 
 window.onload = () =>{
@@ -14,4 +15,13 @@ window.onload = () =>{
             imgHost.classList.remove('hide');
         };
     }
+}
+*/
+
+window.onload = () => {
+    const imgHost = document.getElementById('img-host');
+    const fragment = document.createDocumentFragment();
+    const dataSources = document.getElementsByClassName('gallery-btn');
+
+    
 }
