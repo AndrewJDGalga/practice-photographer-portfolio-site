@@ -62,10 +62,16 @@ window.onload = () => {
         indicator.dataset.bsSlideTo = String(i);
         indicator.ariaLabel = 'Slide ' + (i + 1);
 
+        const carouselItem = document.createElement('div');
+        carouselItem.classList.add('carousel-item');
+
         if(i === 0) {
             indicator.classList.add('active');
             indicator.ariaCurrent = 'true';
+            
+            carouselItem.classList.add('active');
         }
+
 
 
         indicatorFragment.appendChild(indicator);
