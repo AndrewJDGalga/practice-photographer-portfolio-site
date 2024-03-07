@@ -51,11 +51,7 @@ window.onload = () => {
 
     const imageButtons = document.getElementsByClassName('image-button');
 
-    //const fullImgPaths = [];
-
     for(let i = 0; i < imageButtons.length; i++){
-        //fullImgPaths.push(imageButtons[i].dataset.fullscreen);
-        
         const indicator = document.createElement('button');
         indicator.type = 'button';
         indicator.dataset.bsTarget = '#' + carouselID;
@@ -81,6 +77,16 @@ window.onload = () => {
 
         indicatorFragment.appendChild(indicator);
         imageFragment.appendChild(carouselItem);
+
+
+        imageButtons[i].dataset.position = i;
+        imageButtons[i].onclick = () => {
+            carousel.classList.remove('hide');
+        }
+
+        carouselImgHost.onclick = () =>{
+            carousel.classList.add('hide');
+        }
     }
 
     carouselIndicatorHost.appendChild(indicatorFragment);
