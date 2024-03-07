@@ -83,17 +83,8 @@ window.onload = () => {
         imageFragment.appendChild(carouselItem);
     }
 
-    carousel.appendChild(indicatorFragment);
-    carousel.appendChild(imageFragment);
+    carouselIndicatorHost.appendChild(indicatorFragment);
+    carouselImgHost.appendChild(imageFragment);
 
     const bsCarousel = new bootstrap.Carousel(carousel);
-
-    //console.log(imageFragment);
-
-    //console.log(fullImgPaths);
-    /*
-    for(let i = 0; i < imageButtons.length; i++){
-        imageButtons[i].onclick = ()=>{ console.log(imageButtons[i].dataset.position); }
-    }
-    */
 }
