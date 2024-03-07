@@ -50,5 +50,7 @@ window.onload = () => {
 
     const imageButtons = document.getElementsByClassName('image-button');
 
-    
+    for(let i = 0; i < imageButtons.length; i++){
+        imageButtons[i].onclick = ()=>{ console.log(imageButtons[i].dataset.position); }
+    }
 }
