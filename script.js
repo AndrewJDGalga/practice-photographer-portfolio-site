@@ -62,8 +62,16 @@ window.onload = () => {
         indicator.dataset.bsSlideTo = String(i);
         indicator.ariaLabel = 'Slide ' + (i + 1);
 
+        if(i === 0) {
+            indicator.classList.add('active');
+            indicator.ariaCurrent = 'true';
+        }
+
+
         indicatorFragment.appendChild(indicator);
     }
+
+    
 
     console.log(indicatorFragment);
 
