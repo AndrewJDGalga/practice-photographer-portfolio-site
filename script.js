@@ -40,7 +40,8 @@ window.onload = () =>{
 */
 
 window.onload = () => {
-    const carousel = document.getElementById('carousel-host');
+    const carouselID = 'carousel-host';
+    const carousel = document.getElementById(carouselID);
     
     const carouselIndicatorHost = document.getElementsByClassName('carousel-indicators')[0];
     const carouselImgHost = document.getElementsByClassName('carousel-inner')[0];
@@ -56,8 +57,10 @@ window.onload = () => {
         fullImgPaths.push(imageButtons[i].dataset.fullscreen);
         
         const indicator = document.createElement('button');
-        indicator.type = "button";
+        indicator.type = 'button';
+        indicator.dataset.bsTarget = '#' + carouselID;
         indicator.dataset.bsSlideTo = String(i);
+        indicator.ariaLabel = 'Slide ' + (i + 1);
 
         indicatorFragment.appendChild(indicator);
     }
