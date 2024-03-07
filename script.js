@@ -51,10 +51,10 @@ window.onload = () => {
 
     const imageButtons = document.getElementsByClassName('image-button');
 
-    const fullImgPaths = [];
+    //const fullImgPaths = [];
 
     for(let i = 0; i < imageButtons.length; i++){
-        fullImgPaths.push(imageButtons[i].dataset.fullscreen);
+        //fullImgPaths.push(imageButtons[i].dataset.fullscreen);
         
         const indicator = document.createElement('button');
         indicator.type = 'button';
@@ -65,6 +65,11 @@ window.onload = () => {
         const carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel-item');
 
+        const carouselImg = document.createElement('img');
+        carouselImg.src = imageButtons[i].dataset.fullscreen;
+        carouselImg.alt = imageButtons[i].alt;
+        carouselImg.classList.add('d-block');
+
         if(i === 0) {
             indicator.classList.add('active');
             indicator.ariaCurrent = 'true';
@@ -72,14 +77,18 @@ window.onload = () => {
             carouselItem.classList.add('active');
         }
 
-
+        carouselItem.appendChild(carouselImg);
 
         indicatorFragment.appendChild(indicator);
+        imageFragment.appendChild(carouselItem);
     }
 
-    
+    carousel.appendChild(indicatorFragment);
+    carousel.appendChild(imageFragment);
 
-    console.log(indicatorFragment);
+    const bsCarousel = new bootstrap.Carousel(carousel);
+
+    //console.log(imageFragment);
 
     //console.log(fullImgPaths);
     /*
