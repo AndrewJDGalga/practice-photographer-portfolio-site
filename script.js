@@ -51,6 +51,8 @@ window.onload = () => {
 
     const imageButtons = document.getElementsByClassName('image-button');
 
+    let activeImg, activeIndicator;
+
     for(let i = 0; i < imageButtons.length; i++){
         const indicator = document.createElement('button');
         indicator.type = 'button';
@@ -69,8 +71,12 @@ window.onload = () => {
         if(i === 0) {
             indicator.classList.add('active');
             indicator.ariaCurrent = 'true';
+
+            activeIndicator = indicator;
             
             carouselItem.classList.add('active');
+
+            activeImg = carouselItem;
         }
 
         carouselItem.appendChild(carouselImg);
@@ -81,9 +87,20 @@ window.onload = () => {
 
         imageButtons[i].dataset.position = i;
         imageButtons[i].onclick = () => {
+            activeImg.classList.remove('active');
+            activeIndicator.classList.remove('active');
+            activeIndicator.ariaCurrent = 'false';
+
+            //console.log(carouselIndicatorHost.children[i]);
+
+            activeImg = carouselImgHost.children[i];
+            activeIndicator = carouselIndicatorHost.children[i];
+            activeImg.classList.add('active');
+            activeIndicator.classList.add('active');
+            activeIndicator.ariaCurrent = 'true';
+
             carousel.classList.remove('hide');
         }
-
         carouselImgHost.onclick = () =>{
             carousel.classList.add('hide');
         }
@@ -91,6 +108,9 @@ window.onload = () => {
 
     carouselIndicatorHost.appendChild(indicatorFragment);
     carouselImgHost.appendChild(imageFragment);
+
+    console.log(activeIndicator);
+    console.log(activeImg);
 
     const bsCarousel = new bootstrap.Carousel(carousel);
 }
