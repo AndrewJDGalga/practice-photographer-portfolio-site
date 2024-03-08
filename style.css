@@ -45,11 +45,19 @@ body {
 }
 
 #carousel-host {
-    position: absolute;
+    position: fixed;
     z-index: 1;
     top: 0;
     width: 100%;
     background-color: var(--faded);
+}
+
+.carousel-direction-btn {
+    background: url('test.svg');
+    height: 64px;
+    width: 64px;
+    background-color: var(--artist-container);
+    border-radius: 50%;
 }
 
 .carousel-item img {
