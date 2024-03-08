@@ -1,3 +1,14 @@
+//create in-carousel button navigation elements in accordance with public Bootstrap standards
+//https://getbootstrap.com/docs/5.3/components/carousel/
+const createCarouselIndicator = (hostID, index) => {
+    const indicator = document.createElement('button');
+    indicator.type = 'button';
+    indicator.dataset.bsTarget = '#' + hostID;
+    indicator.dataset.bsSlideTo = String(index);
+    indicator.ariaLabel = 'Slide ' + (index + 1);
+    return indicator;
+}
+
 window.onload = () => {
     const carouselID = 'carousel-host';
     const carousel = document.getElementById(carouselID);
@@ -11,11 +22,14 @@ window.onload = () => {
     const imageButtons = document.getElementsByClassName('image-button');
 
     for(let i = 0; i < imageButtons.length; i++){
+        const indicator = createCarouselIndicator(carouselID, i);
+        /*
         const indicator = document.createElement('button');
         indicator.type = 'button';
         indicator.dataset.bsTarget = '#' + carouselID;
         indicator.dataset.bsSlideTo = String(i);
         indicator.ariaLabel = 'Slide ' + (i + 1);
+        */
         
 
         const carouselItem = document.createElement('div');
@@ -49,5 +63,6 @@ window.onload = () => {
     carouselIndicatorHost.appendChild(indicatorFragment);
     carouselImgHost.appendChild(imageFragment);
 
+    //required for bootstrap carousel
     const bsCarousel = new bootstrap.Carousel(carousel);
 }
