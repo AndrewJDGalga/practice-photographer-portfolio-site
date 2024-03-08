@@ -1,12 +1,21 @@
 //create in-carousel button navigation elements in accordance with public Bootstrap standards
 //https://getbootstrap.com/docs/5.3/components/carousel/
-const createCarouselIndicator = (hostID, index) => {
+const createBSCarouselIndicator = (hostID, index) => {
     const indicator = document.createElement('button');
     indicator.type = 'button';
     indicator.dataset.bsTarget = '#' + hostID;
     indicator.dataset.bsSlideTo = String(index);
     indicator.ariaLabel = 'Slide ' + (index + 1);
     return indicator;
+}
+
+//create img element intended for fullscreen bootstrap carousel
+const createBSCarouselImage = (imagePath, imageAlt) => {
+    const carouselImg = document.createElement('img');
+    carouselImg.src = imagePath;
+    carouselImg.alt = imageAlt;
+    carouselImg.classList.add('d-block');
+    return carouselImg;
 }
 
 window.onload = () => {
@@ -22,25 +31,16 @@ window.onload = () => {
     const imageButtons = document.getElementsByClassName('image-button');
 
     for(let i = 0; i < imageButtons.length; i++){
-        const indicator = createCarouselIndicator(carouselID, i);
-        /*
-        const indicator = document.createElement('button');
-        indicator.type = 'button';
-        indicator.dataset.bsTarget = '#' + carouselID;
-        indicator.dataset.bsSlideTo = String(i);
-        indicator.ariaLabel = 'Slide ' + (i + 1);
-        */
-        
+        const indicator = createBSCarouselIndicator(carouselID, i);
 
+        //recommended for images to have div.carousel-item parent
         const carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel-item');
 
-        const carouselImg = document.createElement('img');
-        carouselImg.src = imageButtons[i].dataset.fullscreen;
-        carouselImg.alt = imageButtons[i].alt;
-        carouselImg.classList.add('d-block');
+        const carouselImg = createBSCarouselImage(imageButtons[i].dataset.fullscreen, imageButtons[i].alt);
 
         if(i === 0) {
+            //one of the created images and indicators must be labeled with the following
             indicator.classList.add('active');
             indicator.ariaCurrent = 'true';
             carouselItem.classList.add('active');
