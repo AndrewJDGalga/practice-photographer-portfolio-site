@@ -47,15 +47,16 @@ window.onload = () => {
         }
 
         carouselItem.appendChild(carouselImg);
-
         indicatorFragment.appendChild(indicator);
         imageFragment.appendChild(carouselItem);
 
+        //reveal carousel
         imageButtons[i].onclick = () => {
             carouselIndicatorHost.children[i].click();
             carousel.classList.remove('hide');
         }
     }
+    //hide carousel
     carouselImgHost.onclick = () =>{
         carousel.classList.add('hide');
     }
