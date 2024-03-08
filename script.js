@@ -54,11 +54,13 @@ window.onload = () => {
     let activeImg, activeIndicator;
 
     for(let i = 0; i < imageButtons.length; i++){
+        
         const indicator = document.createElement('button');
         indicator.type = 'button';
         indicator.dataset.bsTarget = '#' + carouselID;
         indicator.dataset.bsSlideTo = String(i);
         indicator.ariaLabel = 'Slide ' + (i + 1);
+        
 
         const carouselItem = document.createElement('div');
         carouselItem.classList.add('carousel-item');
@@ -69,14 +71,16 @@ window.onload = () => {
         carouselImg.classList.add('d-block');
 
         if(i === 0) {
+            
             indicator.classList.add('active');
             indicator.ariaCurrent = 'true';
 
-            activeIndicator = indicator;
+            //activeIndicator = indicator;
+            
             
             carouselItem.classList.add('active');
 
-            activeImg = carouselItem;
+            //activeImg = carouselItem;
         }
 
         carouselItem.appendChild(carouselImg);
@@ -87,30 +91,53 @@ window.onload = () => {
 
         //imageButtons[i].dataset.position = i;
         imageButtons[i].onclick = () => {
-            activeImg.classList.remove('active');
-            activeIndicator.classList.remove('active');
-            activeIndicator.ariaCurrent = 'false';
+            //console.log(carouselImgHost)
+            //carousel.classList.remove('hide');
+
+            //activeImg.classList.remove('active');
+            //activeIndicator.classList.remove('active');
+            //activeIndicator.ariaCurrent = 'false';
 
             //console.log(carouselIndicatorHost.children[i]);
 
-            activeImg = carouselImgHost.children[i];
-            activeIndicator = carouselIndicatorHost.children[i];
-            activeImg.classList.add('active');
-            activeIndicator.classList.add('active');
-            activeIndicator.ariaCurrent = 'true';
-
-            carousel.classList.remove('hide');
-        }
-        carouselImgHost.onclick = () =>{
-            carousel.classList.add('hide');
-
             /*
             activeImg.classList.remove('active');
-            activeIndicator.classList.remove('active');
-            activeIndicator.ariaCurrent = 'false';
+            activeImg = carouselImgHost.children[i];
+            activeImg.classList.add('active');
             */
+            //activeImg.classList.add('carousel-item-prev');
+            //activeImg.classList.add('carousel-item-start');
+            //activeImg.classList.remove('active');
+            //activeImg = carouselImgHost.children[i];
+            //activeImg.classList.add('carousel-item-next');
+            //activeImg.classList.add('carousel-item-end');
+            //activeImg.classList.add('active');
+            //activeIndicator = carouselIndicatorHost.children[i];
+            //activeImg.classList.add('active');
+            //activeIndicator.classList.add('active');
+            //activeIndicator.ariaCurrent = 'true';
+            
+            //carouselImgHost.children[i].dataset.bsSlideTo = String(i);
+            carouselIndicatorHost.children[i].click();
+            carousel.classList.remove('hide');
+            //console.log(activeIndicator);
         }
+        /*
+        carouselImgHost.onclick = () =>{
+            carousel.classList.add('hide');
+        }
+        */
     }
+    carouselImgHost.onclick = () =>{
+        carousel.classList.add('hide');
+    }
+
+    /*
+    const testBtn1 = document.getElementById('test1');
+    testBtn1.addEventListener('click', ()=>{
+        console.log(carouselImgHost);
+    });
+    */
 
     carouselIndicatorHost.appendChild(indicatorFragment);
     carouselImgHost.appendChild(imageFragment);
