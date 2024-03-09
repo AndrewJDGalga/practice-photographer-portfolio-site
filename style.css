@@ -52,10 +52,17 @@ body {
     background-color: var(--faded);
 }
 
-.carousel-direction-btn {
-    background: url('test.svg');
+.carousel-left-btn, .carousel-right-btn {
     height: 64px;
     width: 64px;
+}
+.carousel-left-btn {
+    background: url("arrow_left.svg");
+    background-color: var(--artist-container);
+    border-radius: 50%;
+}
+.carousel-right-btn {
+    background: url('arrow_right.svg');
     background-color: var(--artist-container);
     border-radius: 50%;
 }
